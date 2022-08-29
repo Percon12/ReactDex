@@ -6,8 +6,10 @@ import Pokedex from "./components/Pokedex";
 import Searchbar from "./components/Searchbar";
 import { FavoriteProvider } from "./contexts/favoritesContext";
 
+
 const favoritesKey = "f"
 function App() {
+  const [test, setTest] = useState(false);
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(0);
   const [loading, setLoading] = useState(false);
@@ -24,7 +26,6 @@ function App() {
       const promises = data.results.map(async (pokemon) => {
         return await getPokemonData(pokemon.url);
       });
-
       const results = await Promise.all(promises);
       setPokemons(results);
       setLoading(false);
@@ -77,6 +78,8 @@ function App() {
     setLoading(false)
 
   }
+
+
   return (
     <FavoriteProvider
       value={{

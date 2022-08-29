@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Filter from './Filter';
 
 const Searchbar = (props) => {
     const [search, setSearch] = useState("dito")
@@ -21,6 +22,9 @@ const Searchbar = (props) => {
             </div>
             <div className="searchbar-btn">
                 <button onClick={onButtonClickHandler} >Buscar</button>
+            </div>
+            <div>
+                <Filter/>
             </div>
         </div>
     )
